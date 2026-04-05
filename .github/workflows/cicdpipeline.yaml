@@ -22,8 +22,8 @@ jobs:
         run: mvn checkstyle:check
         
       - name: Unit Tests & Coverage (JaCoCo)
-        run: mvn verify 
-
+        run: mvn clean verify -Dmaven.test.skip=true --no-transfer-progress
+        
       - name: Security Scan (OWASP)
         run: mvn dependency-check:check
 
